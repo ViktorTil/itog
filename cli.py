@@ -1,9 +1,6 @@
 from classes import AddressBook
 from func import add_phone, get_birthdate, change, delete, delete_phones, find_contact, help_me, phone, show_all, when_birthday, unknow_command, add_email, hello, future_congratulation, whom_to_congratulate, correct_email, add_note, find_note
 
-
-
-
 COMMANDS = {
     add_phone: ("add", "+"),
     change: ("change", "зміни"),
