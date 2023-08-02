@@ -1,0 +1,22 @@
+hello, hi, привет, +, -, good bye, close, exit, bye, esc, q, add, birthdate, дата, change, зміни, del, delete, kill, del phones, delete phones, find, поиск, ищи, phone, тел, телефон, show all, all, view, birthday, др, email, mail, мыло, почта, congratulate, поздравить, др?, whom birthday, period birthday, change email, change mail, correct email, correct mail, note, заметки, add note, find note, help
+Это консольный бот помощник для работы с вашей адресной книгой
+Для работы с ним используйте следующие команды с паттерном (Ptr.):
+hello, hi, привет - приветствие бота
+add, + - добавление нового контакта(номера к контакту). Ptr.: add [name] [[phone]]
+change, зміни - изменение номера контакта. Ptr.: change [name] [old phone], [new phone]
+bye, exit, end, q, esc, close, good bye - завершение программы
+show all, all, view - вывод на экран всех контактов(по умолчанию-по 3). Ptr.: show all [[page_len: int]]
+del, delete, kill, -  - удаление контакта из списка. Ptr.: del [name]
+del phones, delete phones - удаление номеров контакта. Ptr.: del phones [name]
+find, поиск, ищи - поиск по номеру, контакту в книге. Ptr.: find [any str, numbers]
+birthdate, дата - добавление даты рождения контакта. Ptr.: birthdate [name] [dd mm yy]
+birthday, др - количество дней до ДР контакта. Ptr.: birthday [name]
+phone, тел, телефон - иформация по контакту. Ptr.: phone [name]
+email, mail, мыло, почта - добавление эл.почты контакта. Ptr.: email [name] [email]
+congratulate, поздравить, др? - список контактов, которых нужно поздравить на след неделе. Ptr.: congratulate
+congratulate, поздравить, др? - список контактов, которых нужно поздравить на след неделе. Ptr.: congratulate
+whom birthday, period birthday - список контактов, у которых ДР на протяжении N дней, начиная с текущей даты. Ptr.: whom birthday N(N->int)
+change email, change mail, correct email, correct mail - изменение email контакта. Ptr.: change email [name] [old email], [new email]
+note, заметки, add note - добавление текстовых заметок к контакту. Ptr. note [name] [note : str]
+find note - поиск по заметкам контактов. Ptr. find note [str]
+help - помощь
