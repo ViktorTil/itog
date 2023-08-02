@@ -1,8 +1,8 @@
 from classes import AddressBook
 from func import add_phone, get_birthdate, change, delete, delete_phones, find_contact, help_me, phone, show_all, when_birthday, unknow_command, add_email, hello, future_congratulation, whom_to_congratulate, correct_email, add_note, find_note
 
-commands = ["hello", ["good bye", "close", "exit", "bye", "esc", "q"], "add", "birthdate", "change", "del", "del phones", "find", "help",  "phone", "show all", "birthday"]
-answers = ["How can I help you?", "Good bye!", add_phone, get_birthdate, change, delete, delete_phones, find_contact, help_me, phone, show_all, when_birthday]
+
+
 
 COMMANDS = {
     add_phone: ("add", "+"),
@@ -69,47 +69,6 @@ def parser(text:str):
                 return help_me, text.removeprefix("help").split(" ")
     return command, result      
      
-'''
-def parser(text:str):
-    comm = ""
-    command = None
-    for cmd, kwds in COMMANDS.items():
-
-        for kwd in kwds:
-            if text.lower().startswith(kwd):
-                if len(kwd) > len(comm):
-                    comm = kwd
-                    command = cmd
-                    data = text.lower().removeprefix(comm).strip()
-
-    return command, data.split(" ")'''
-
-def reply(command, phone_book):
-    bot=True
-    operator=command.split(" ")
-    if command in commands[1]:
-        print(answers[1])
-        
-        bot = False
-    elif operator[0] in commands or (" ".join(command.split(" ")[:2])) in commands:
-        try:
-            index_comm = commands.index(" ".join(command.split(" ")[:2]))
-        except ValueError:
-            index_comm = commands.index(operator[0])
-        
-
-        try:
-
-            print(answers[index_comm](phone_book, *command.removeprefix(
-                commands[index_comm]).lstrip().split(" ")))
-
-        except:
-            print(answers[index_comm])
-    else:
-        print(f'Введите правильную команду :\033[34m{commands[0]}, {", ".join(commands[2:])}\033[0m или \033[34m{", ".join(commands[1])}\033[0m для выхода')
-
-    return bot
-
 
 if __name__ == '__main__':
     main()
