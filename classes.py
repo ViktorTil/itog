@@ -18,6 +18,13 @@ class Field:
         return str(self)
         
 
+class Address(Field):
+    def __init__(self, country : str = None, city : str = None, street : str = None, apt : str = None, add_address : str = None ):
+        self.country = country
+        self.city = city
+        self.street = street
+        self.apt = apt
+        self.add_address = add_address
 
 class Birthday(Field):
     def __init__(self, value : str = None):
@@ -115,7 +122,7 @@ class Phone(Field):
     
 
 class Record:
-    def __init__(self, name: Name, phone: Phone = None, birthday : Birthday = None, email : Email = None, note : Note = None):
+    def __init__(self, name: Name, phone: Phone = None, birthday : Birthday = None, email : Email = None, note : Note = None, address = Address = None):
         self.phones = []
         self.name = name
         if phone and phone.value:
@@ -124,6 +131,11 @@ class Record:
         self.birthday = birthday
         self.email = email
         self.note = note
+        self.address = address
+    
+    def add_address(self, address : Address):
+        self.address = address
+        
 
     def add_note(self, note: Note):
         try:
