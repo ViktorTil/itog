@@ -122,7 +122,7 @@ class Phone(Field):
     
 
 class Record:
-    def __init__(self, name: Name, phone: Phone = None, birthday : Birthday = None, email : Email = None, note : Note = None, address = Address = None):
+    def __init__(self, name: Name, phone: Phone = None, birthday : Birthday = None, email : Email = None, note : Note = None, address : Address = None):
         self.phones = []
         self.name = name
         if phone and phone.value:
