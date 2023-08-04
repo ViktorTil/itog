@@ -13,8 +13,8 @@ class Field:
     def __str__(self) -> str:
         if self.value:
             return self.value
-        else:
-            return f"Вводите корректно номера телефонов, например, в формате: \033[34m0XX-XXX-XX-XX\033[0m"
+      #  else:
+       #    return f"Вводите корректно номера телефонов, например, в формате: \033[34m0XX-XXX-XX-XX\033[0m"
                                                             
     
     def __repr__(self) -> str:
@@ -36,7 +36,10 @@ class Birthday(Field):
 
     @property
     def value(self):
-        return self.__value
+        if self.__value < datetime.now().date():
+            return self.__value
+       # else:
+        #    print("не то")
 
     @value.setter
     def value(self, value):
@@ -47,8 +50,8 @@ class Birthday(Field):
             birth ="/".join(birth_date)
             self.__value = datetime.strptime(birth, '%d/%m/%y').date()
         except ValueError:
-            raise InputError("Введите корректную дату в формате \033[34mmm-dd-yyyy\033[0m")
-            #print(f"Введите корректную дату в формате \033[34mmm-dd-yyyy\033[0m")
+            #raise InputError("Введите корректную дату в формате \033[34mmm-dd-yyyy\033[0m")
+            print(f"Введите корректную дату в формате \033[34mmm-dd-yyyy\033[0m")
     
     def __str__(self) -> str:
         try:
@@ -118,8 +121,8 @@ class Phone(Field):
             self.__value = form_phone
         
         except AttributeError:
-            raise InputError(f"Вводите корректно номера телефонов, например, в формате: \033[34m0XX-XXX-XX-XX\033[0m")
-          #  print(f"Вводите корректно номера телефонов, например, в формате: \033[34m0XX-XXX-XX-XX\033[0m")   
+          #  raise InputError(f"Вводите корректно номера телефонов, например, в формате: \033[34m0XX-XXX-XX-XX\033[0m")
+            print(f"Вводите корректно номера телефонов, например, в формате: \033[34m0XX-XXX-XX-XX\033[0m")   
 
 
 
