@@ -1,4 +1,4 @@
-from classes import Name, Phone, Record, Birthday, Email, Note
+from classes import Name, Phone, Record, Birthday, Email, Note, InputError
 import re
 from functools import wraps
 
@@ -18,6 +18,8 @@ def error_with_func(arg1,arg2):
                 return e
             except KeyError:
                 return f'Нет контакта: \033[34m{args[0]}\033[0m в вашей книге'
+            except InputError as e:
+                return e
         return proc_error
     return input_error
 

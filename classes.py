@@ -3,6 +3,9 @@ from datetime import datetime, timedelta
 import pickle
 import re
 
+class InputError(Exception):
+    pass
+
 class Field:
     def __init__(self, value):
         self.value = value
@@ -44,7 +47,8 @@ class Birthday(Field):
             birth ="/".join(birth_date)
             self.__value = datetime.strptime(birth, '%d/%m/%y').date()
         except ValueError:
-            print(f"Введите корректную дату в формате \033[34mmm-dd-yyyy\033[0m")
+            raise InputError("Введите корректную дату в формате \033[34mmm-dd-yyyy\033[0m")
+            #print(f"Введите корректную дату в формате \033[34mmm-dd-yyyy\033[0m")
     
     def __str__(self) -> str:
         try:
@@ -114,7 +118,8 @@ class Phone(Field):
             self.__value = form_phone
         
         except AttributeError:
-            print(f"Вводите корректно номера телефонов, например, в формате: \033[34m0XX-XXX-XX-XX\033[0m")   
+            raise InputError(f"Вводите корректно номера телефонов, например, в формате: \033[34m0XX-XXX-XX-XX\033[0m")
+          #  print(f"Вводите корректно номера телефонов, например, в формате: \033[34m0XX-XXX-XX-XX\033[0m")   
 
 
 
