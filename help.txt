@@ -14,7 +14,6 @@ birthday, др - количество дней до ДР контакта. Ptr.:
 phone, тел, телефон - иформация по контакту. Ptr.: phone [name]
 email, mail, мыло, почта - добавление эл.почты контакта. Ptr.: email [name] [email]
 congratulate, поздравить, др? - список контактов, которых нужно поздравить на след неделе. Ptr.: congratulate
-congratulate, поздравить, др? - список контактов, которых нужно поздравить на след неделе. Ptr.: congratulate
 whom birthday, period birthday - список контактов, у которых ДР на протяжении N дней, начиная с текущей даты. Ptr.: whom birthday N(N->int)
 change email, change mail, correct email, correct mail - изменение email контакта. Ptr.: change email [name] [old email], [new email]
 note, заметки, add note - добавление текстовых заметок к контакту. Ptr. note [name] [note : str]
